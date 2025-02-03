@@ -2,11 +2,11 @@ from googleapiclient.discovery import build
 import pandas as pd
 import os
 
-# User Input for API Key (or set as an environment variable for security)
+# User Input for API Key
 api_key = input("Please enter your YouTube API key: ").strip()
 
-# Playlist IDs (Modify this as needed)
-playlist_ids = ['PLbHrOSG7nVN0iy3JQonGt6p6illtDhoqX']
+# Playlist IDs (Modify this as needed); after list= in the URL
+playlist_ids = ['PL4wA2s4MZ8hMYHC-khM7rsVbtauZIdjo3']
 
 # Build the YouTube client
 youtube = build('youtube', 'v3', developerKey=api_key)
