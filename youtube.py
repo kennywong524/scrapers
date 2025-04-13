@@ -46,6 +46,7 @@ video_ids = get_all_video_ids_from_playlists(youtube, playlist_ids)
 def get_replies(youtube, parent_id, video_id):
     replies = []
     next_page_token = None
+    video_link = f"https://www.youtube.com/watch?v={video_id}"  # Generate video link
 
     while True:
         try:
@@ -64,6 +65,7 @@ def get_replies(youtube, parent_id, video_id):
                     'Timestamp': comment['publishedAt'],
                     'Username': comment['authorDisplayName'],
                     'VideoID': video_id,
+                    'VideoLink': video_link,  # Added video link column
                     'Comment': comment['textDisplay'],
                     'Date': comment.get('updatedAt', comment['publishedAt'])
                 })
@@ -81,6 +83,7 @@ def get_replies(youtube, parent_id, video_id):
 def get_comments_for_video(youtube, video_id):
     all_comments = []
     next_page_token = None
+    video_link = f"https://www.youtube.com/watch?v={video_id}"  # Generate video link
 
     while True:
         try:
@@ -99,6 +102,7 @@ def get_comments_for_video(youtube, video_id):
                     'Timestamp': top_comment['publishedAt'],
                     'Username': top_comment['authorDisplayName'],
                     'VideoID': video_id,
+                    'VideoLink': video_link,  # Added video link column
                     'Comment': top_comment['textDisplay'],
                     'Date': top_comment.get('updatedAt', top_comment['publishedAt'])
                 })

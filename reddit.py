@@ -3,9 +3,9 @@ import csv
 
 # Initialize the Reddit instance
 reddit = praw.Reddit(
-    client_id='your id',
-    client_secret='your secret',
-    user_agent='your user agent'
+    client_id='ypXSFJSJ_QpONh4yCaSzKw',
+    client_secret='80JuQPDLQPm8PVvWsU4zeMgfQ2XAJg',
+    user_agent='No_Bullfrog8687'
 )
 
 def scrape_reddit_comments(url):
